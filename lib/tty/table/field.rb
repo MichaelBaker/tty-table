@@ -101,7 +101,7 @@ module TTY
       #
       # @api public
       def width
-        @width || UnicodeUtils.display_width(@content)
+        @width || Unicode::DisplayWidth.of(@content)
       end
 
       # Return number of lines this value spans.
@@ -157,7 +157,7 @@ module TTY
 
       # @api public
       def display_width(string)
-        UnicodeUtils.display_width(string)
+        Unicode::DisplayWidth.of(string)
       end
     end # Field
   end # Table
